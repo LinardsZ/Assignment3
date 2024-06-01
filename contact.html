@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="viewport" content="width=device-width">
+  <meta content="origin-when-cross-origin" name="referrer">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/site.css">
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+  <title>Baltik Bright Cleaners</title>
+  <meta name="title" content="Baltik Bright Cleaners">
+</head>
+
+<body class="has-fixed-nav is-banner-in">
+  <div id="sb-navigation" class="">
+    <section
+      class="sb-section sb-section-opt-light option-nav-shadow option-nav-link-hover-minimal option-nav-fixed option-nav-links-display-right optio-button-none"
+      style="transform: none; top: 0px;">
+
+      <div class="container-fluid sb-container-fluid sb-container">
+        <div class="row sb-row sb-row-opt-padding-top-none sb-row-opt-padding-bottom-none sb-row-opt-center">
+          <div
+            class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-simple-top-nav">
+            <div class="sb-column-content ">
+              <div class="wrapper sb-top-header items-can-collapse">
+                <a class="sb-top-header__brand brand" href="./index.html">Baltik Bright Cleaners</a>
+                <button aria-label="Show navigation" class="sb-mobile-nav-btn" id="sb-mobile-nav-btn" type="button">
+                  <span class="sb-mobile-nav-btn__line"></span>
+                </button>
+
+                <nav aria-label="Main" class="sb-top-header__nav sb-nav">
+                  <ul class="sb-nav__list">
+                    <li class="sb-nav__item sb-nav__btn  ">
+                      <a class=" sb-link sb-button sb-button--nav " href="./contact.html" target="">Contact</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <script>
+                $(function () {
+                  var
+                    $navigationWrapper = $("#sb-navigation"),
+                    $navigationSection = $("#sb-navigation > .sb-section")
+
+                  function toggleFixedNavigation() {
+                    $navigationSection = $("#sb-navigation > .sb-section")
+
+                    if ($navigationSection.hasClass("option-nav-fixed")) {
+                      var $bannerSection = $("#sb-banner > .sb-section")
+
+                      if ($(window).scrollTop() > 0) {
+                        $navigationWrapper.addClass("sb-nav--fixed");
+
+                        var bannerOuterHeight = 0
+                        if ($bannerSection.length > 0 && $("body").hasClass("is-banner-in")) {
+                          bannerOuterHeight = $bannerSection.outerHeight();
+                          $navigationSection.css('top', bannerOuterHeight + 'px');
+                        }
+
+                        if (!$navigationSection.hasClass('option-nav-overlay')) {
+                          $('body').css('padding-top', $navigationWrapper.outerHeight() + bannerOuterHeight + 'px')
+                        }
+                      } else {
+                        $navigationWrapper.removeClass("sb-nav--fixed");
+
+                        if ($bannerSection.length > 0) {
+                          $navigationSection.css('top', '0px');
+                        }
+
+                        if ($bannerSection.length > 0 && $("body").hasClass("is-banner-in")) {
+                          $('body').css('padding-top', $bannerSection.outerHeight() + 'px');
+                        } else {
+                          $('body').css('padding-top', '0px');
+                        }
+                      }
+                    }
+                  }
+
+                  // Adjust Hero top padding when nav is overlayed above it
+                  function adjustHeroPadding() {
+                    if (!$navigationSection.hasClass('option-nav-overlay')) return
+
+                    const $firstHero = $('#sb-page-structure > section:first')
+
+                    if (!$firstHero.hasClass('option-section-hero')) {
+                      $navigationSection.removeClass('option-nav-overlay')
+                      $('body').removeClass('has-overlay-nav')
+                    } else {
+                      const navHeight = $navigationSection.outerHeight()
+                      const topPadding = navHeight + 20 // Plus default section padding
+
+                      $firstHero.css('paddingTop', `${topPadding}px`);
+                    }
+                  }
+
+                  adjustHeroPadding()
+
+
+                  $(window).scroll(function () {
+                    toggleFixedNavigation()
+                  });
+
+                  $(window).resize(function () {
+                    setTimeout(function () {
+                      adjustHeroPadding()
+                      toggleFixedNavigation()
+
+                      // Properly hide banner on window resize as resizing can adjust banner's height
+                      if (!$navigationSection.hasClass("option-nav-fixed") && $('body').hasClass('is-banner-out')) {
+                        var $bannerSection = $("#sb-banner")
+                        $bannerSection.css('margin-top', '-' + $bannerSection.outerHeight() + 'px')
+                      }
+                    }, 200)
+                  })
+                });
+
+                window.processForm = function(e) {
+                  debugger;
+                  e.preventDefault();
+                  $(".b12-form-error").css("display", "");
+                  return false;
+                }
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="sb-page-structure">
+
+    <section id="contact-hero"
+      class="sb-section sb-section-opt-light has-background option-align-center option-section-hero"
+      style="min-height: 50vh;">
+      <div class="sb-background "
+        style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.7)), url(&#39;https://cdn.b12.io/media/026b8c1e-3cad-11e8-bbb9-0242ac11000f-jpg-hero_image.jpeg&#39;)">
+      </div>
+      <div class="container sb-container-fixed sb-container">
+        <div class="row sb-row sb-row-opt-padding-top-large sb-row-opt-padding-bottom-large sb-row-opt-center">
+          <div
+            class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-hero">
+            <div class="sb-column-content ">
+              <p></p>
+              <div class="sb-content sb-hero option-width sb-section-alignable ">
+                <div class="sb-hero__content-wrapper">
+                  <h1 class="sb-title sb-hero__title aos-init aos-animate">Contact</h1>
+                  <div class="sb-subtitle sb-hero__subtitle aos-init aos-animate">We're available to chat. Reach out to
+                    us anytime!</div>
+                </div>
+                <div class="sb-cta-wrapper sb-section-alignable sb-btn-full-width">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-info-and-form-with-map"
+      class="sb-section sb-section-opt-light option-form-hide-placeholder half-width-contact-form option-contact-details-columns-map-top option-align-left appointment-inline-view option-no-map">
+      <div class="container sb-container-fixed sb-container">
+        <div class="row sb-row sb-row-opt-padding-top-large sb-row-opt-padding-bottom-large sb-row-opt-top">
+
+          <div style="background-color: #021130; padding: 40px;"
+            class="sb-column sb-contact col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-">
+            <div class="sb-column-content ">
+              <div
+                class="row sb-row sb-row-opt-padding-top-none sb-row-opt-padding-bottom-none sb-row-opt-center sb-row-opt-no-component-padding">
+                <div
+                  class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-section-title">
+                  <div class="sb-column-content option-width-12col">
+                    <div style="display: none;">
+                    </div>
+                    <div class="sb-section-title sb-section-alignable option-width aos-init aos-animate" style="color: white;">Get in touch
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="row sb-row sb-row-opt-padding-top-none sb-row-opt-padding-bottom-none sb-row-opt-center sb-row-opt-no-component-padding">
+                <div
+                  class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-section-subtitle">
+                  <div class="sb-column-content option-width-12col">
+                    <div class="sb-section-subtitle sb-section-alignable option-width aos-init aos-animate" style="color: white;">
+                      Feel free to give us a call or send us an
+                      email with your questions or comments.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="row sb-row sb-row-opt-padding-top-none sb-row-opt-padding-bottom-none sb-row-opt-center sb-row-opt-no-component-padding">
+                <div
+                  class="sb-column sb-contact col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-contact-form">
+                  <div class="sb-column-content option-width-12col">
+                    <p>
+                    </p>
+                    <div class="sb-contact-form contact-form option-width sb-section-alignable aos-init aos-animate">
+                      <form class="form js-form" onsubmit="processForm">
+                        <div class="form__group  form__group--required ">
+                          <label class="form__label contact-form__label" style="color: white;">Name
+                            <span class="form__label-required" title="This field is required">*</span>
+                          </label>
+
+                          <input required="" class="form__input contact-form__input" name="name"
+                            placeholder="Jane Smith" type="text" value="" style="background-color: #021130; color: #fff; border-color: #fff;">
+                        </div>
+
+                        <div class="form__group  form__group--required ">
+                          <label class="form__label contact-form__label" style="color: white;">Email address
+                            <span class="form__label-required" title="This field is required">*</span>
+                          </label>
+
+                          <input required="" class="form__input contact-form__input" name="from_email"
+                            placeholder="email@website.com" type="email" value="" style="background-color: #021130; color: #fff; border-color: #fff;">
+                        </div>
+                        <div class="form__group  form__group--required ">
+                          <label class="form__label contact-form__label" style="color: white;">Phone number
+                            <span class="form__label-required" title="This field is required">*</span>
+                          </label>
+
+                          <input required="" class="form__input contact-form__input" name="from_phone"
+                            placeholder="555-555-5555" type="tel" value="" style="background-color: #021130; color: #fff; border-color: #fff;">
+                        </div>
+
+                        <div class="form__group   ">
+                          <label class="form__label contact-form__label" style="color: white;">Message </label>
+
+                          <textarea class="form__input form__input--textarea contact-form__textarea" name="message"
+                            placeholder="" rows="4" style="background-color: #021130; color: #fff; border-color: #fff;"></textarea>
+                        </div>
+
+                        <div data-is-required="true" class="form__group form__group--checkbox form__group--required ">
+                          <div class="form__checkbox-error" style="color: white;">
+                            Please select at least one option.
+                          </div>
+
+                          <div class="form__input-checkbox-wrapper">
+                            <input class="form__input form__input--checkbox" name="tos" type="checkbox">
+                            <label class="form__label contact-form__label " style="color: white;">
+                              I allow this website to store my submission so they can respond to my inquiry.
+                              <span class="form__label-required" title="This field is required">*</span>
+                            </label>
+                          </div>
+                        </div>
+
+                        <button class="sb-button sb-button--form contact-form__btn" type="submit">Submit</button>
+                      </form>
+                      <div class="b12-form-error" style="display: none; color: white;">
+                        Sorry, we were not able to submit the form at present time. Please try again later.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="sb-column sb-contact col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-">
+            <div class="sb-column-content ">
+              <div
+                class="row sb-row sb-row-opt-padding-top-none sb-row-opt-padding-bottom-none sb-row-opt-center sb-row-opt-no-component-padding">
+                <div
+                  class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-paragraph">
+                  <div class="sb-column-content option-width-12col">
+                    <div class="sb-paragraph option-width sb-section-alignable aos-init aos-animate">
+                      <p>
+                        We would love to hear from you, whether you're interested in working with our team or pursuing a
+                        career with us.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row sb-row sb-row-opt-padding-top-none sb-row-opt-padding-bottom-none sb-row-opt-center sb-row-opt-no-component-padding">
+                <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-contact-details">
+                  <div class="sb-column-content ">
+                    <p>
+                    </p>
+                    <div class="contact-details vcard sb-section-alignable aos-init aos-animate">
+                      <div class="contact-details__row contact-details__contact">
+                        <div class="h3 contact-details__title">Reach out</div>
+                        <div class="contact-details__email">
+                          <svg height="8px" version="1.1" viewBox="0 0 12 8" width="12px"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M0 8h11.2V0H0v8zm5.6-2.673l1.095-.914 3.522 2.947H.983l3.522-2.947 1.095.914zm1.594-1.33l3.366-2.81v5.626L7.194 3.996zM5.6 4.492L.985.64h9.23L5.6 4.493zm-1.594-.497L.64 6.813V1.186l3.366 2.81z"
+                              fill-rule="nonzero" stroke="none" stroke-width="1"></path>
+                          </svg>
+                          <a aria-label="Email" class="email"
+                            href="mailto:lz21061@baltikbright.com">lz21061@baltikbright.com</a>
+                        </div>
+                      </div>
+
+                      <div class="contact-details__row contact-details__location">
+                        <div class="h3 contact-details__title">Location</div>
+                        <p class="adr contact-details__address">
+                          <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M256 0C156.748 0 76 80.748 76 180c0 33.534 9.289 66.26 26.869 94.652l142.885 230.257A15 15 0 00258.499 512h.119a14.997 14.997 0 0012.75-7.292L410.611 272.22C427.221 244.428 436 212.539 436 180 436 80.748 355.252 0 256 0zm128.866 256.818L258.272 468.186l-129.905-209.34C113.734 235.214 105.8 207.95 105.8 180c0-82.71 67.49-150.2 150.2-150.2S406.1 97.29 406.1 180c0 27.121-7.411 53.688-21.234 76.818z">
+                            </path>
+                            <path
+                              d="M256 90c-49.626 0-90 40.374-90 90 0 49.309 39.717 90 90 90 50.903 0 90-41.233 90-90 0-49.626-40.374-90-90-90zm0 150.2c-33.257 0-60.2-27.033-60.2-60.2 0-33.084 27.116-60.2 60.2-60.2s60.1 27.116 60.1 60.2c0 32.683-26.316 60.2-60.1 60.2z">
+                            </path>
+                          </svg>
+                          <a aria-label="Location"
+                            href="https://www.google.com/maps/place/+Riga+RIX+LV" rel="noopener noreferrer"
+                            target="_blank">
+                            <span>Riga, RIX LV</span>
+                          </a>
+                        </p>
+                      </div>
+
+                      <div class="contact-details__row contact-details__hours sb-hours-wrapper">
+                        <div class="h3 contact-details__title">Hours</div>
+                        <ol aria-label="Working hours" class="hours-list">
+
+                          <li class="hours-list__item">
+                            <div class="hours-list__day">Mon<span
+                                class="hidden-xs-down hidden-sm-down hidden-md-down">day</span></div>
+                            <div class="hours-list__from">9:00am</div>
+                            <div class="hours-list__dash">–</div>
+                            <div class="hours-list__to">10:00pm</div>
+                          </li>
+
+                          <li class="hours-list__item">
+                            <div class="hours-list__day">Tue<span
+                                class="hidden-xs-down hidden-sm-down hidden-md-down">sday</span></div>
+                            <div class="hours-list__from">9:00am</div>
+                            <div class="hours-list__dash">–</div>
+                            <div class="hours-list__to">10:00pm</div>
+                          </li>
+
+                          <li class="hours-list__item">
+                            <div class="hours-list__day">Wed<span
+                                class="hidden-xs-down hidden-sm-down hidden-md-down">nesday</span></div>
+                            <div class="hours-list__from">9:00am</div>
+                            <div class="hours-list__dash">–</div>
+                            <div class="hours-list__to">10:00pm</div>
+                          </li>
+
+                          <li class="hours-list__item">
+                            <div class="hours-list__day">Thu<span
+                                class="hidden-xs-down hidden-sm-down hidden-md-down">rsday</span></div>
+                            <div class="hours-list__from">9:00am</div>
+                            <div class="hours-list__dash">–</div>
+                            <div class="hours-list__to">10:00pm</div>
+                          </li>
+
+                          <li class="hours-list__item">
+                            <div class="hours-list__day">Fri<span
+                                class="hidden-xs-down hidden-sm-down hidden-md-down">day</span></div>
+                            <div class="hours-list__from">9:00am</div>
+                            <div class="hours-list__dash">–</div>
+                            <div class="hours-list__to">10:00pm</div>
+                          </li>
+
+                          <li class="hours-list__item">
+                            <div class="hours-list__day">Sat<span
+                                class="hidden-xs-down hidden-sm-down hidden-md-down">urday</span></div>
+                            <div class="hours-list__from">9:00am</div>
+                            <div class="hours-list__dash">–</div>
+                            <div class="hours-list__to">6:00pm</div>
+                          </li>
+
+                          <li class="hours-list__item">
+                            <div class="hours-list__day">Sun<span
+                                class="hidden-xs-down hidden-sm-down hidden-md-down">day</span></div>
+                            <div class="hours-list__from">9:00am</div>
+                            <div class="hours-list__dash">–</div>
+                            <div class="hours-list__to">12:00pm</div>
+                          </li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

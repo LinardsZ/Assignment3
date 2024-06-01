@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="viewport" content="width=device-width">
+  <meta content="origin-when-cross-origin" name="referrer">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/site.css">
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+  <title>Baltik Bright Cleaners</title>
+  <meta name="title" content="Baltik Bright Cleaners">
+</head>
+<body class="has-fixed-nav is-banner-in">
+  <div id="sb-navigation" class="">
+    <section
+      class="sb-section sb-section-opt-light option-nav-shadow option-nav-link-hover-minimal option-nav-fixed option-nav-links-display-right optio-button-none"
+      style="transform: none; top: 0px;">
+      <div class="container-fluid sb-container-fluid sb-container">
+        <div class="row sb-row sb-row-opt-padding-top-none sb-row-opt-padding-bottom-none sb-row-opt-center">
+          <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-simple-top-nav">
+            <div class="sb-column-content ">
+              <div class="wrapper sb-top-header items-can-collapse">
+                <a class="sb-top-header__brand brand" href="./index.html">Baltik Bright Cleaners</a>
+                <button aria-label="Show navigation" class="sb-mobile-nav-btn" id="sb-mobile-nav-btn" type="button">
+                  <span class="sb-mobile-nav-btn__line"></span>
+                </button>
+
+                <nav aria-label="Main" class="sb-top-header__nav sb-nav">
+                  <ul class="sb-nav__list">
+                    <li class="sb-nav__item sb-nav__btn  ">
+                      <a class=" sb-link sb-button sb-button--nav " href="./contact.html" target="">Contact</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <script>
+                $(function () {
+                  var
+                    $navigationWrapper = $("#sb-navigation"),
+                    $navigationSection = $("#sb-navigation > .sb-section")
+
+                  function toggleFixedNavigation() {
+                    $navigationSection = $("#sb-navigation > .sb-section")
+
+                    if ($navigationSection.hasClass("option-nav-fixed")) {
+                      var $bannerSection = $("#sb-banner > .sb-section")
+
+                      if ($(window).scrollTop() > 0) {
+                        $navigationWrapper.addClass("sb-nav--fixed");
+
+                        var bannerOuterHeight = 0
+                        if ($bannerSection.length > 0 && $("body").hasClass("is-banner-in")) {
+                          bannerOuterHeight = $bannerSection.outerHeight();
+                          $navigationSection.css('top', bannerOuterHeight + 'px');
+                        }
+
+                        if (!$navigationSection.hasClass('option-nav-overlay')) {
+                          $('body').css('padding-top', $navigationWrapper.outerHeight() + bannerOuterHeight + 'px')
+                        }
+                      } else {
+                        $navigationWrapper.removeClass("sb-nav--fixed");
+
+                        if ($bannerSection.length > 0) {
+                          $navigationSection.css('top', '0px');
+                        }
+
+                        if ($bannerSection.length > 0 && $("body").hasClass("is-banner-in")) {
+                          $('body').css('padding-top', $bannerSection.outerHeight() + 'px');
+                        } else {
+                          $('body').css('padding-top', '0px');
+                        }
+                      }
+                    }
+                  }
+
+                  // Adjust Hero top padding when nav is overlayed above it
+                  function adjustHeroPadding() {
+                    if (!$navigationSection.hasClass('option-nav-overlay')) return
+
+                    const $firstHero = $('#sb-page-structure > section:first')
+
+                    if (!$firstHero.hasClass('option-section-hero')) {
+                      $navigationSection.removeClass('option-nav-overlay')
+                      $('body').removeClass('has-overlay-nav')
+                    } else {
+                      const navHeight = $navigationSection.outerHeight()
+                      const topPadding = navHeight + 20 // Plus default section padding
+
+                      $firstHero.css('paddingTop', `${topPadding}px`);
+                    }
+                  }
+
+                  adjustHeroPadding()
+
+
+                  $(window).scroll(function () {
+                    toggleFixedNavigation()
+                  });
+
+                  $(window).resize(function () {
+                    setTimeout(function () {
+                      adjustHeroPadding()
+                      toggleFixedNavigation()
+
+                      // Properly hide banner on window resize as resizing can adjust banner's height
+                      if (!$navigationSection.hasClass("option-nav-fixed") && $('body').hasClass('is-banner-out')) {
+                        var $bannerSection = $("#sb-banner")
+                        $bannerSection.css('margin-top', '-' + $bannerSection.outerHeight() + 'px')
+                      }
+                    }, 200)
+                  })
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="sb-page-structure">
+    <section id="testimonials-hero" class="sb-section sb-section-opt-light has-background option-align-center option-section-hero" style="min-height: 50vh;">
+      <div class="sb-background " style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.7)), url(&#39;https://cdn.b12.io/media/026b8c1e-3cad-11e8-bbb9-0242ac11000f-jpg-hero_image.jpeg&#39;)">
+      </div>
+      <div class="container sb-container-fixed sb-container">
+        <div class="row sb-row sb-row-opt-padding-top-large sb-row-opt-padding-bottom-large sb-row-opt-center">
+          <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-hero">
+            <div class="sb-column-content ">
+              <p>
+              </p>
+              <div class="sb-content sb-hero option-width sb-section-alignable ">
+                <div class="sb-hero__content-wrapper">
+                  <h1 class="sb-title sb-hero__title aos-init aos-animate">Clients</h1>
+                  <div class="sb-subtitle sb-hero__subtitle aos-init aos-animate">Don't take our word for it</div>
+                </div>
+                <div class="sb-cta-wrapper sb-section-alignable sb-btn-full-width">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="sb-section sb-section-opt-dark option-grid-items-background-light option-image-padding-none option-align-default option-card-order-image-header-text option-imagesize-lg option-columns-3col option-imagecrop-rectangle-landscape">
+      <div class="container sb-container-fixed sb-container">
+        <div class="row sb-row sb-row-opt-padding-top-large sb-row-opt-padding-bottom-none sb-row-opt-center">
+          <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-section-title">
+            <div class="sb-column-content ">
+              <div style="display: none;">
+              </div>
+              <div class="sb-section-title sb-section-alignable option-width aos-init aos-animate">Testimonials</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row sb-row sb-row-opt-padding-top-none sb-row-opt-padding-bottom-none sb-row-opt-center">
+          <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-section-subtitle">
+            <div class="sb-column-content ">
+              <div class="sb-section-subtitle sb-section-alignable option-width aos-init aos-animate">
+                What some recent clients say about their experience
+                with Baltik Bright Cleaners
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row sb-row sb-row-opt-padding-top-none sb-row-opt-padding-bottom-small sb-row-opt-center">
+          <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-paragraph">
+            <div class="sb-column-content ">
+              <div class="sb-paragraph option-width sb-section-alignable aos-init aos-animate">
+                <p>We might be biased. Take it from our clients.</p>
+              </div>
+              <div class="sb-column-content ">
+                <div class="items-grid simple-cards ">
+                  <div  class="items-grid__item items-grid__item--bg-light aos-init aos-animate">
+                    <blockquote class="items-grid__item-body">
+                      <div class="items-grid__item-image">
+                        <figure class="option-image lazy" style="background-image: url(&quot;./assets/img/a2217460-3cb4-11e8-9f2d-0242ac11000f-jpg-regular_image.jpeg&quot;);">
+                          <img
+                            src="./assets/img/a2217460-3cb4-11e8-9f2d-0242ac11000f-jpg-regular_image.jpeg">
+                        </figure>
+                      </div>
+
+
+                      <div class="items-grid__description">
+                        <p>They arrived right on time and did a fantastic job.
+                          My house hasn't been this spotless in ages.
+                          The team was professional, courteous, and very thorough.
+                        </p>
+                      </div>
+
+                      <footer class="simple-cards__headers">
+
+                        <div class="items-grid__header">Lola Gibbs</div>
+                        <div class="items-grid__subheader"></div>
+                      </footer>
+                    </blockquote>
+                  </div>
+
+                  <div class="items-grid__item items-grid__item--bg-light aos-init aos-animate">
+                    <blockquote class="items-grid__item-body">
+                      <div class="items-grid__item-image">
+                        <figure class="option-image lazy" style="background-image: url(&quot;./assets/img/91a8a7de-3cb4-11e8-9f2d-0242ac11000f-jpg-regular_image.jpeg&quot;);">
+                          <img
+                            src="./assets/img/91a8a7de-3cb4-11e8-9f2d-0242ac11000f-jpg-regular_image.jpeg">
+                        </figure>
+                      </div>
+
+
+                      <div class="items-grid__description">
+                        <p>Every nook and cranny of my home was cleaned with such care and attention to detail.
+                          The cleaners were friendly and respectful of my space.
+                          It’s such a relief to come home to a perfectly clean house.
+                        </p>
+                      </div>
+
+                      <footer class="simple-cards__headers">
+                        <div class="items-grid__header">Chris Wei</div>
+                        <div class="items-grid__subheader"></div>
+                      </footer>
+                    </blockquote>
+                  </div>
+
+                  <div class="items-grid__item items-grid__item--bg-light aos-init aos-animate">
+                    <blockquote class="items-grid__item-body">
+                      <div class="items-grid__item-image">
+                        <figure class="option-image lazy" style="background-image: url(&quot;./assets/img/a19f8d74-3cb4-11e8-9f2d-0242ac11000f-jpg-regular_image.jpeg&quot;);">
+                          <img
+                            src="./assets/img/a19f8d74-3cb4-11e8-9f2d-0242ac11000f-jpg-regular_image.jpeg">
+                        </figure>
+                      </div>
+
+                      <div class="items-grid__description">
+                        <p>The booking process was easy, and the cleaning was absolutely top-notch. They even managed to remove some stubborn stains that I thought were permanent.</p>
+                      </div>
+
+                      <footer class="simple-cards__headers">
+                        <div class="items-grid__header">Karen Weiss</div>
+                        <div class="items-grid__subheader"></div>
+                      </footer>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row sb-row sb-row-opt-padding-top-none sb-row-opt-padding-bottom-small sb-row-opt-center">
+          <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-simple-cards">
+          </div>
+        </div>
+
+        <div class="row sb-row sb-row-opt-padding-top-small sb-row-opt-padding-bottom-large sb-row-opt-center">
+          <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-call-to-action">
+            <div class="sb-column-content ">
+              <p>
+              </p>
+              <div class="sb-cta-wrapper sb-section-alignable sb-btn-full-width">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

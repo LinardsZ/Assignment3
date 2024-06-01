@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="viewport" content="width=device-width">
+  <meta content="origin-when-cross-origin" name="referrer">
+  <title>Baltik Bright Cleaners</title>
+  <meta name="title" content="Baltik Bright Cleaners">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/site.css">
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+</head>
+<body class="has-fixed-nav is-banner-in">
+  <div id="sb-navigation" class="">
+    <section
+      class="sb-section sb-section-opt-light option-nav-shadow option-nav-link-hover-minimal option-nav-fixed option-nav-links-display-right optio-button-none"
+      style="transform: none; top: 0px;">
+
+      <div class="container-fluid sb-container-fluid sb-container">
+        <div class="row sb-row sb-row-opt-padding-top-none sb-row-opt-padding-bottom-none sb-row-opt-center">
+          <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-simple-top-nav">
+            <div class="sb-column-content ">
+              <div class="wrapper sb-top-header items-can-collapse">
+                <a class="sb-top-header__brand brand" href="./index.html">Baltik Bright Cleaners</a>
+
+                <nav aria-label="Main" class="sb-top-header__nav sb-nav">
+                  <ul class="sb-nav__list">
+                    <li class="sb-nav__item sb-nav__btn  ">
+                      <a class=" sb-link sb-button sb-button--nav " href="./contact.html" target="">Contact</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <script>
+                $(function () {
+                  var
+                    $navigationWrapper = $("#sb-navigation"),
+                    $navigationSection = $("#sb-navigation > .sb-section")
+
+                  function toggleFixedNavigation() {
+                    $navigationSection = $("#sb-navigation > .sb-section")
+
+                    if ($navigationSection.hasClass("option-nav-fixed")) {
+                      var $bannerSection = $("#sb-banner > .sb-section")
+
+                      if ($(window).scrollTop() > 0) {
+                        $navigationWrapper.addClass("sb-nav--fixed");
+
+                        var bannerOuterHeight = 0
+                        if ($bannerSection.length > 0 && $("body").hasClass("is-banner-in")) {
+                          bannerOuterHeight = $bannerSection.outerHeight();
+                          $navigationSection.css('top', bannerOuterHeight + 'px');
+                        }
+
+                        if (!$navigationSection.hasClass('option-nav-overlay')) {
+                          $('body').css('padding-top', $navigationWrapper.outerHeight() + bannerOuterHeight + 'px')
+                        }
+                      } else {
+                        $navigationWrapper.removeClass("sb-nav--fixed");
+
+                        if ($bannerSection.length > 0) {
+                          $navigationSection.css('top', '0px');
+                        }
+
+                        if ($bannerSection.length > 0 && $("body").hasClass("is-banner-in")) {
+                          $('body').css('padding-top', $bannerSection.outerHeight() + 'px');
+                        } else {
+                          $('body').css('padding-top', '0px');
+                        }
+                      }
+                    }
+                  }
+
+                  // Adjust Hero top padding when nav is overlayed above it
+                  function adjustHeroPadding() {
+                    if (!$navigationSection.hasClass('option-nav-overlay')) return
+
+                    const $firstHero = $('#sb-page-structure > section:first')
+
+                    if (!$firstHero.hasClass('option-section-hero')) {
+                      $navigationSection.removeClass('option-nav-overlay')
+                      $('body').removeClass('has-overlay-nav')
+                    } else {
+                      const navHeight = $navigationSection.outerHeight()
+                      const topPadding = navHeight + 20 // Plus default section padding
+
+                      $firstHero.css('paddingTop', `${topPadding}px`);
+                    }
+                  }
+
+                  adjustHeroPadding()
+
+
+                  $(window).scroll(function () {
+                    toggleFixedNavigation()
+                  });
+
+                  $(window).resize(function () {
+                    setTimeout(function () {
+                      adjustHeroPadding()
+                      toggleFixedNavigation()
+
+                      // Properly hide banner on window resize as resizing can adjust banner's height
+                      if (!$navigationSection.hasClass("option-nav-fixed") && $('body').hasClass('is-banner-out')) {
+                        var $bannerSection = $("#sb-banner")
+                        $bannerSection.css('margin-top', '-' + $bannerSection.outerHeight() + 'px')
+                      }
+                    }, 200)
+                  })
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="sb-page-structure">
+    <section id="home" class="sb-section sb-section-opt-light has-background option-section-hero option-width-8col option-order-title-subtitle-text-cta-image option-align-center option-section-background-overlay-30-bottom option-section-background-hide option-imagesize-lg option-image-width-12col option-imagecrop-rectangle-landscape-half">
+      <div class="sb-background" style="background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.7)), url(&#39;https://cdn.b12.io/media/026b8c1e-3cad-11e8-bbb9-0242ac11000f-jpg-hero_image.jpeg&#39;)"></div>
+      <div class="container sb-container-fixed sb-container">
+        <div class="row sb-row sb-row-opt-padding-top-large sb-row-opt-padding-bottom-large sb-row-opt-center">
+          <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-text-image-vertical">
+            <div class="sb-column-content ">
+              <p></p>
+              <div class="sb-text-image-vertical sb-section-alignable">
+                <div class="sb-text-image-vertical__content">
+                  <h1 class="sb-section-title option-width sb-text-image-vertical__content-title aos-init aos-animate">Baltik Bright Cleaners</h1>
+                  <h2 class="sb-section-subtitle option-width sb-text-image-vertical__content-subtitle aos-init aos-animate">
+                    A professional cleaning service with a knack for detail
+                  </h2>
+                  <figure class="option-image aos-init aos-animate"
+                    style="background-image: url(./assets/img/026b8c1e-3cad-11e8-bbb9-0242ac11000f-jpg-hero_image.jpeg);">
+                    <img
+                      src="./assets/img/026b8c1e-3cad-11e8-bbb9-0242ac11000f-jpg-hero_image.jpeg">
+                  </figure>
+
+                  <div class="sb-text-image-vertical__content-cta">
+                    <div class="sb-cta-wrapper sb-section-alignable ">
+                      <span class="aos-init aos-animate">
+                        <a class="sb-cta-wrapper__btn sb-button sb-button--primary" href="#service-overview" rel=" " target="">
+                          Services
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="sb-section sb-section-opt-dark option-image-width-6col sb-split-text-image-section option-section-background-hide option-align-left option-width-12col"
+      style="min-height: 100vh;">
+      <div class="container-fluid sb-container-fluid sb-container">
+        <div class="row sb-row sb-row-opt-padding-top-none sb-row-opt-padding-bottom-none sb-row-opt-center">
+          <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 col-xl-offset-0 sb-component-split-text-image">
+            <div class="sb-column-content ">
+              <p></p>
+              <div class="sb-split-text-image">
+                <div class="sb-split-text-image__content">
+                  <div class="sb-split-text-image__body option-width sb-section-alignable">
+                    <div class="sb-title sb-split-text-image__content-title">Our story</div>
+                    <div class="sb-subtitle sb-split-text-image__content-subtitle">
+                      Providing exceptional cleaning services in Latvia
+                    </div>
+                    <div class="sb-split-text-image__content-paragraph">
+                      Baltik Bright Cleaners is dedicated to delivering top-notch cleaning services in Latvia. With a commitment to excellence, we ensure your spaces shine bright and fresh every time.
+                    </div>
+                    <div class="sb-cta-wrapper sb-section-alignable ">
+                      <span>
+                        <a class="sb-cta-wrapper__btn sb-button sb-button--secondary"
+                          href="./about.html" rel=" " target="">
+                          About
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="sb-split-text-image__image">
+                  <figure
+                    class="lazy"
+                    style="background-image: url(&quot;./assets/img/1dc5bd4c-1f4e-11ef-91e4-0242ac110002-jpg-hero_image.jpeg&quot;);">
+                    <img loading="lazy" src="./assets/img/1dc5bd4c-1f4e-11ef-91e4-0242ac110002-jpg-hero_image.jpeg">
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service-overview"
+      class="sb-section sb-section-opt-light option-items-shadow option-items-shadow-on-hover option-collection-title-decoration-arrow option-grid-align-default option-columns-3col option-image-color-hover-revert option-imagesize-lg option-imagecrop-rectangle-landscape option-align-content-left option-card-hover-animation-grow">
+      <div class="container sb-container-fixed sb-container">
+        <div class="row sb-row sb-row-opt-padding-top-large sb-row-opt-padding-bottom-large sb-row-opt-center">
+          <div class="sb-column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12
+              col-xs-offset-0
+              col-sm-offset-0
+              col-md-offset-0
+              col-lg-offset-0
+              col-xl-offset-0
+              sb-component-items-grid">
+            <div class="sb-column-content ">
+              <div class="sb-items-grid">
+                <div class="sb-items-grid__content option-width sb-section-alignable">
+                  <div class="sb-section-title aos-init aos-animate">Our services</div>
+                  <div class="sb-section-subtitle aos-init aos-animate">Proficient cleaning solutions for every need</div>
+                  <div class="sb-paragraph aos-init aos-animate">
+                    From regular house cleaning to office
+                    maintenance, Baltik Bright Cleaners offers a wide range of professional cleaning services tailored
+                    to meet your requirements.
+                  </div>
+                </div>
+                <ul class="sb-items-grid__items items-grid sb-section-alignable">
+                  <li class="items-grid__item aos-init aos-animate">
+                    <a aria-label="Read more" class="items-grid__item-body"
+                      href="./services.html" rel=" " target="">
+                      <div class="items-grid__item-image">
+                        <figure class="option-image lazy"
+                          style="background-image: url('./assets/img/229e3150-1f4e-11ef-80bf-0242ac110002-jpg-regular_image.jpeg');">
+                          <img
+                            src="./assets/img/229e3150-1f4e-11ef-80bf-0242ac110002-jpg-regular_image.jpeg">
+                        </figure>
+                      </div>
+                      <div class="items-grid__item-content">
+                        <div class="items-grid__header h3">
+                          Window cleaning
+                          <svg fill="none" viewBox="0 0 10 17" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M1.25111 16.0843c-.320261 0-.640343-.1222-.88465-.3663-.488613-.4886-.488613-1.2807 0-1.7693l5.90679-5.90664L.36646 2.13545c-.488613-.48844-.488613-1.28069 0-1.769124.488434-.488435 1.28069-.488435 1.76912 0L8.92684 7.15759c.48844.48843.48844 1.28068 0 1.7693L2.13558 15.7181c-.24412.244-.56421.3662-.88447.3662Z"
+                              fill="#000"></path>
+                          </svg>
+                        </div>
+                        <div class="items-grid__description">
+                          Streak-free window cleaning for crystal-clear views.
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li class="items-grid__item aos-init aos-animate">
+                    <a aria-label="Read more" class="items-grid__item-body"
+                      href="./services.html" rel=" " target="">
+                      <div class="items-grid__item-image">
+                        <figure class="option-image lazy"
+                          style="background-image: url('./assets/img/23946750-1f4e-11ef-80bf-0242ac110002-jpg-regular_image.jpeg');">
+                          <img
+                            src="./assets/img/23946750-1f4e-11ef-80bf-0242ac110002-jpg-regular_image.jpeg">
+                        </figure>
+                      </div>
+                      <div class="items-grid__item-content">
+                        <div class="items-grid__header h3">
+                          Deep cleaning
+
+                          <svg fill="none" viewBox="0 0 10 17" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M1.25111 16.0843c-.320261 0-.640343-.1222-.88465-.3663-.488613-.4886-.488613-1.2807 0-1.7693l5.90679-5.90664L.36646 2.13545c-.488613-.48844-.488613-1.28069 0-1.769124.488434-.488435 1.28069-.488435 1.76912 0L8.92684 7.15759c.48844.48843.48844 1.28068 0 1.7693L2.13558 15.7181c-.24412.244-.56421.3662-.88447.3662Z"
+                              fill="#000"></path>
+                          </svg>
+                        </div>
+                        <div class="items-grid__description">
+                          Rid yourself of those pesky furniture and carpet stains.
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li class="items-grid__item aos-init aos-animate">
+                    <a aria-label="Read more" class="items-grid__item-body"
+                      href="./services.html" rel=" " target="">
+
+                      <div class="items-grid__item-image">
+                        <figure class="option-image lazy"
+                          style="background-image: url('./assets/img/23b8e152-1f4e-11ef-80bf-0242ac110002-jpg-regular_image.jpeg');">
+                          <img
+                            src="./assets/img/23b8e152-1f4e-11ef-80bf-0242ac110002-jpg-regular_image.jpegg">
+                        </figure>
+                      </div>
+
+                      <div class="items-grid__item-content">
+                        <div class="items-grid__header h3">
+                          Move-in / move-out cleaning
+
+                          <svg fill="none" viewBox="0 0 10 17" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M1.25111 16.0843c-.320261 0-.640343-.1222-.88465-.3663-.488613-.4886-.488613-1.2807 0-1.7693l5.90679-5.90664L.36646 2.13545c-.488613-.48844-.488613-1.28069 0-1.769124.488434-.488435 1.28069-.488435 1.76912 0L8.92684 7.15759c.48844.48843.48844 1.28068 0 1.7693L2.13558 15.7181c-.24412.244-.56421.3662-.88447.3662Z"
+                              fill="#000"></path>
+                          </svg>
+                        </div>
+
+                        <div class="items-grid__description">
+                          Comprehensive cleaning for making the next big step.
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li class="items-grid__item aos-init aos-animate">
+                    <a aria-label="Read more" class="items-grid__item-body"
+                      href="./services.html" rel=" " target="">
+                      <div class="items-grid__item-image">
+                        <figure class="option-image lazy"
+                          style="background-image: url('./assets/img/22bf40ac-1f4e-11ef-80bf-0242ac110002-jpg-regular_image.jpeg');">
+                          <img
+                            src="./assets/img/22bf40ac-1f4e-11ef-80bf-0242ac110002-jpg-regular_image.jpeg">
+                        </figure>
+                      </div>
+                      <div class="items-grid__item-content">
+                        <div class="items-grid__header h3">
+                          Daily chores
+
+                          <svg fill="none" viewBox="0 0 10 17" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M1.25111 16.0843c-.320261 0-.640343-.1222-.88465-.3663-.488613-.4886-.488613-1.2807 0-1.7693l5.90679-5.90664L.36646 2.13545c-.488613-.48844-.488613-1.28069 0-1.769124.488434-.488435 1.28069-.488435 1.76912 0L8.92684 7.15759c.48844.48843.48844 1.28068 0 1.7693L2.13558 15.7181c-.24412.244-.56421.3662-.88447.3662Z"
+                              fill="#000"></path>
+                          </svg>
+                        </div>
+                        <div class="items-grid__description">Doing the mopping and vacuuming so you don't have to.</div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li class="items-grid__item aos-init aos-animate">
+                    <a aria-label="Read more" class="items-grid__item-body"
+                      href="./services.html" rel=" " target="">
+                      <div class="items-grid__item-image">
+                        <figure class="option-image lazy"
+                          style="background-image: url('./assets/img/2329db06-1f4e-11ef-80bf-0242ac110002-jpg-regular_image.jpeg');">
+                          <img
+                            src="./assets/img/2329db06-1f4e-11ef-80bf-0242ac110002-jpg-regular_image.jpeg">
+                        </figure>
+                      </div>
+
+                      <div class="items-grid__item-content">
+                        <div class="items-grid__header h3">
+                          Custom cleaning
+
+                          <svg fill="none" viewBox="0 0 10 17" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M1.25111 16.0843c-.320261 0-.640343-.1222-.88465-.3663-.488613-.4886-.488613-1.2807 0-1.7693l5.90679-5.90664L.36646 2.13545c-.488613-.48844-.488613-1.28069 0-1.769124.488434-.488435 1.28069-.488435 1.76912 0L8.92684 7.15759c.48844.48843.48844 1.28068 0 1.7693L2.13558 15.7181c-.24412.244-.56421.3662-.88447.3662Z"
+                              fill="#000"></path>
+                          </svg>
+                        </div>
+                        <div class="items-grid__description">
+                          For even the most specific cleaning requests.
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li class="items-grid__item aos-init aos-animate">
+                    <a aria-label="Read more" class="items-grid__item-body"
+                      href="./services.html" rel=" " target="">
+                      <div class="items-grid__item-image">
+                        <figure class="option-image lazy"
+                          style="background-image: url('./assets/img/21fd4c22-1f4e-11ef-80bf-0242ac110002-jpg-regular_image.jpeg');">
+                          <img
+                            src="./assets/img/21fd4c22-1f4e-11ef-80bf-0242ac110002-jpg-regular_image.jpeg">
+                        </figure>
+                      </div>
+
+                      <div class="items-grid__item-content">
+                        <div class="items-grid__header h3">
+                          Disinfecting services
+
+                          <svg fill="none" viewBox="0 0 10 17" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M1.25111 16.0843c-.320261 0-.640343-.1222-.88465-.3663-.488613-.4886-.488613-1.2807 0-1.7693l5.90679-5.90664L.36646 2.13545c-.488613-.48844-.488613-1.28069 0-1.769124.488434-.488435 1.28069-.488435 1.76912 0L8.92684 7.15759c.48844.48843.48844 1.28068 0 1.7693L2.13558 15.7181c-.24412.244-.56421.3662-.88447.3662Z"
+                              fill="#000"></path>
+                          </svg>
+                        </div>
+                        <div class="items-grid__description">
+                          For keeping the house truly as sanitary as it looks.
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
