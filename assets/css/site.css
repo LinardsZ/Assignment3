@@ -1,5 +1,10 @@
-@import url(https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap);
+@font-face {
+    font-family: "Rufina";
+    font-weight: 400 700;
+    src:
+      url("../fonts/rufina-regular-webfont.woff2") format("woff2"),
+      url("../fonts/rufina-bold-webfont.woff2") format("woff2");
+  }
 
 @media (min-width: 375px)
 {
@@ -105,7 +110,7 @@
 }
 
 .display-xl-font {
-    font-family: "Nunito Sans";
+    font-family: "Rufina";
     font-style: normal;
     font-weight: 700;
     text-transform: uppercase;
@@ -1211,13 +1216,13 @@ a:visited:focus-visible {
 .sb-button--secondary:link,
 .sb-button--secondary:visited {
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0;
     text-transform: none;
     border-width: 2px;
     border-radius: 0;
     font-size: 1rem;
-    font-family: Nunito Sans
+    font-family: Rufina
 }
 
 .sb-button--nav,
@@ -1228,7 +1233,7 @@ a:visited:focus-visible {
 
 @media (max-width:991px) {
     .display-xl-font {
-        font-family: "Nunito Sans";
+        font-family: "Rufina";
         font-style: normal;
         font-weight: 700;
         text-transform: uppercase;
@@ -1324,8 +1329,8 @@ a:visited:focus-visible {
     .sb-button--nav:visited {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
-        font-weight: 600;
+        font-family: Rufina;
+        font-weight: 700;
         line-height: 1.25;
         letter-spacing: 0;
         text-transform: none
@@ -1334,7 +1339,7 @@ a:visited:focus-visible {
 
 @media (max-width:767px) {
     .display-xl-font {
-        font-family: "Nunito Sans";
+        font-family: "Rufina";
         font-style: normal;
         font-weight: 700;
         text-transform: uppercase;
@@ -1459,8 +1464,8 @@ a:visited:focus-visible {
     .sb-button--nav:visited {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
-        font-weight: 600;
+        font-family: Rufina;
+        font-weight: 700;
         line-height: 1.25;
         letter-spacing: 0;
         text-transform: none
@@ -1774,8 +1779,8 @@ a:visited:focus-visible {
     .sb-button--primary:visited {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
-        font-weight: 600;
+        font-family: Rufina;
+        font-weight: 700;
         line-height: 1.25;
         letter-spacing: 0;
         text-transform: none
@@ -1789,8 +1794,8 @@ a:visited:focus-visible {
     .sb-button--primary:visited {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
-        font-weight: 600;
+        font-family: Rufina;
+        font-weight: 700;
         line-height: 1.25;
         letter-spacing: 0;
         text-transform: none
@@ -1949,8 +1954,8 @@ a:visited:focus-visible {
     .sb-button--secondary:visited {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
-        font-weight: 600;
+        font-family: Rufina;
+        font-weight: 700;
         line-height: 1;
         letter-spacing: 0;
         text-transform: none
@@ -1964,8 +1969,8 @@ a:visited:focus-visible {
     .sb-button--secondary:visited {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
-        font-weight: 600;
+        font-family: Rufina;
+        font-weight: 700;
         line-height: 1.25;
         letter-spacing: 0;
         text-transform: none
@@ -2498,8 +2503,8 @@ a:visited:focus-visible {
 
 .sb-footer__nav-list>li>a:not(.sb-button) {
     font-size: 1rem;
-    font-family: Nunito Sans;
-    font-weight: 600;
+    font-family: Rufina;
+    font-weight: 700;
     display: inline-block;
     padding: 6px 0;
     margin: 0;
@@ -2541,8 +2546,8 @@ a:visited:focus-visible {
 .option-button-none .sb-footer__nav-list>li a.sb-button:visited {
     font-size: 1rem;
     font-style: normal;
-    font-family: Nunito Sans;
-    font-weight: 600;
+    font-family: Rufina;
+    font-weight: 700;
     line-height: 1.25;
     letter-spacing: 0;
     text-transform: none;
@@ -2692,7 +2697,7 @@ select {
 .form__input {
     font-size: 1.125rem;
     font-style: normal;
-    font-family: Nunito Sans;
+    font-family: Rufina;
     font-weight: 400;
     line-height: 1.25;
     letter-spacing: 0;
@@ -2862,7 +2867,7 @@ select {
 .form__input-radio-wrapper .form__label {
     font-size: 1.125rem;
     font-style: normal;
-    font-family: Nunito Sans;
+    font-family: Rufina;
     line-height: 1.25;
     letter-spacing: 0;
     text-transform: none;
@@ -3705,8 +3710,8 @@ select {
 .sb-nav__item:not(.sb-nav__btn) .sb-nav__link:visited {
     font-size: 1rem;
     font-style: normal;
-    font-family: Nunito Sans;
-    font-weight: 600;
+    font-family: Rufina;
+    font-weight: 700;
     line-height: 1.25;
     letter-spacing: 0;
     text-transform: none;
@@ -3872,8 +3877,8 @@ select {
 .sb-nav__sub .sb-nav__item .sb-nav__sub-link:visited {
     font-size: 1rem;
     font-style: normal;
-    font-family: Nunito Sans;
-    font-weight: 600;
+    font-family: Rufina;
+    font-weight: 700;
     line-height: 1.25;
     letter-spacing: 0;
     text-transform: none;
@@ -4052,8 +4057,8 @@ select {
 .option-button-none .sb-button.sb-button--nav:visited {
     font-size: 1rem;
     font-style: normal;
-    font-family: Nunito Sans;
-    font-weight: 600;
+    font-family: Rufina;
+    font-weight: 700;
     line-height: 1.25;
     letter-spacing: 0;
     text-transform: none;
@@ -4999,8 +5004,8 @@ select {
 .contact-details__title {
     font-size: 1rem;
     font-style: normal;
-    font-family: Nunito Sans;
-    font-weight: 600;
+    font-family: Rufina;
+    font-weight: 700;
     line-height: 1.5;
     letter-spacing: 0;
     text-transform: none;
@@ -5368,8 +5373,8 @@ select {
     .sb-button--form:visited {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
-        font-weight: 600;
+        font-family: Rufina;
+        font-weight: 700;
         line-height: 1.5;
         letter-spacing: 0;
         text-transform: none
@@ -5404,7 +5409,7 @@ select {
     .sb-footer__nav-list>li>a:not(.sb-button) {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
+        font-family: Rufina;
         font-weight: 400;
         line-height: 1.25;
         letter-spacing: 0;
@@ -5415,7 +5420,7 @@ select {
         font-size: 1rem;
         font-style: normal;
         font-family: Rufina;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 1.5;
         letter-spacing: 0;
         text-transform: none
@@ -5444,7 +5449,7 @@ select {
     .sb-nav__sub .sb-nav__item .sb-nav__sub-link:visited {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
+        font-family: Rufina;
         font-weight: 400;
         line-height: 1.25;
         letter-spacing: 0;
@@ -5518,8 +5523,8 @@ select {
     .sb-button--form:visited {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
-        font-weight: 600;
+        font-family: Rufina;
+        font-weight: 700;
         line-height: 1.5;
         letter-spacing: 0;
         text-transform: none
@@ -5612,7 +5617,7 @@ select {
     .sb-footer__nav-list>li>a:not(.sb-button) {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
+        font-family: Rufina;
         font-weight: 400;
         line-height: 1.25;
         letter-spacing: 0;
@@ -5633,7 +5638,7 @@ select {
     .option-button-none .sb-footer__nav-list>li a.sb-button:visited {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
+        font-family: Rufina;
         font-weight: 400;
         line-height: 1.25;
         letter-spacing: 0;
@@ -5644,7 +5649,7 @@ select {
         font-size: 1rem;
         font-style: normal;
         font-family: Rufina;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 1.5;
         letter-spacing: 0;
         text-transform: none
@@ -5670,7 +5675,7 @@ select {
     .sb-nav__sub .sb-nav__item .sb-nav__sub-link:visited {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
+        font-family: Rufina;
         font-weight: 400;
         line-height: 1.25;
         letter-spacing: 0;
@@ -5819,8 +5824,8 @@ select {
     .contact-details__title {
         font-size: 1.125rem;
         font-style: normal;
-        font-family: Nunito Sans;
-        font-weight: 600;
+        font-family: Rufina;
+        font-weight: 700;
         line-height: 1.5;
         letter-spacing: 0;
         text-transform: none
@@ -6686,7 +6691,7 @@ select {
 
 .sb-section-title,
 .sb-split-text-image__content-title {
-    font-family: Nunito Sans;
+    font-family: Rufina;
     font-weight: 700;
     line-height: 1;
     text-transform: uppercase;
@@ -7143,7 +7148,7 @@ select {
     .sb-split-text-image__content-title {
         font-size: 1rem;
         font-style: normal;
-        font-family: Nunito Sans;
+        font-family: Rufina;
         font-weight: 700;
         line-height: 1;
         letter-spacing: 0;
@@ -7324,7 +7329,7 @@ select {
     .sb-section-title {
         font-size: .875rem;
         font-style: normal;
-        font-family: Nunito Sans;
+        font-family: Rufina;
         font-weight: 700;
         line-height: 1;
         letter-spacing: 0;
@@ -7351,7 +7356,7 @@ select {
     .sb-split-text-image__content-title {
         font-size: .875rem;
         font-style: normal;
-        font-family: Nunito Sans;
+        font-family: Rufina;
         font-weight: 700;
         line-height: 1;
         letter-spacing: 0;
